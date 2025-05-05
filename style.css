@@ -1,6 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @font-face {
   font-family: "Deadstock";
   src: url("Assets/Fonts/Dead\ Stock\ -\ Demo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stencilia";
+  src: url("Assets/Fonts/Stencilia-A.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -15,44 +24,174 @@ html {
   box-sizing: border-box;
 }
 
-.header{
-    background: black;
-    columns: white;
-    width: 100%;
-    position: fixed;
-    padding: 10px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+  background: black;
+  columns: white;
+  width: 100%;
+  position: fixed;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
 
-.logo{
-    position: relative;
-    font-size: 45px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    padding :5px 10px;
-    text-transform: uppercase;
-    font-family: "Deadstock", sans-serif;
+.logo {
+  position: relative;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  padding: 6px 15px;
+  text-transform: uppercase;
+  font-family: "Deadstock", sans-serif;
 }
 
-.nav-links ul{
-    list-style: none;
-    display: flex;
-   
+.logo:hover {
+  color: #ffd600;
+  transition: all 0.3s ease-in-out;
 }
 
-.nav-links ul li{
-    margin: 0 2px;
+.nav-links ul {
+  list-style: none;
+  display: flex;
 }
 
-.nav-links ul li a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 6px 15px;
-    transition: all 0.3s ease-in-out;
-    font-family: "Deadstock", sans-serif;
+.nav-links ul li {
+  margin: 0 2px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 6px 15px;
+  transition: all 0.3s ease-in-out;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.home {
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  background: #1c1c1c;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  flex-wrap: wrap;
+  gap: 60px;
+  background-image: url(https://cdnb.artstation.com/p/assets/images/images/072/752/005/large/alan-veron-dojo-sunset.jpg?1708106083);
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+ 
+}
+
+.home-content {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.home h1 {
+  font-size: 80px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Stencilia", sans-serif;
+}
+
+.home-img img {
+  flex: 1;
+  display: flex;
+  width: 400px;
+}
+
+.about,
+.sensei {
+  background-color: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-content,
+.sensei-content {
+  max-width: 600px;
+}
+
+.about-content h1,
+.sensei-content h1 {
+  font-size: 60px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Deadstock", sans-serif;
+}
+
+.about-content p,
+.sensei-content p {
+  font-size: 18px;
+  line-height: 2.0;
+  margin: 20px 0;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.about-content button,
+.sensei-content button {
+  background-color: #ffd600;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-img,
+.sensei-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #ffd600;
+}
+
+.about-img img {
+  flex: 1;
+  display: flex;
+  width: 500px;
+  object-fit: contain;
+  height: auto;
+}
+
+.sensei-content h3 {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Deadstock", sans-serif;
+}
+
+.sensei-img img {
+  flex: 1;
+  display: flex;
+  width: 500px;
+  object-fit: contain;
+  height: auto;
 }
