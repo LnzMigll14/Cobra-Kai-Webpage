@@ -165,6 +165,14 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
+.about-content button:hover,
+.sensei-content button:hover {
+  background-color: #fff;
+  color: black;
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
+}
+
 .about-img,
 .sensei-img {
   display: flex;
