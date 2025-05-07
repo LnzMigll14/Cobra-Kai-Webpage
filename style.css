@@ -1,5 +1,9 @@
+/* =========================
+   Import Fonts
+========================= */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* Custom Fonts */
 @font-face {
   font-family: "Deadstock";
   src: url("Assets/Fonts/Dead\ Stock\ -\ Demo.ttf") format("truetype");
@@ -14,6 +18,9 @@
   font-style: normal;
 }
 
+/* =========================
+   Base Styles
+========================= */
 html {
   scroll-behavior: smooth;
 }
@@ -22,8 +29,12 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
+/* =========================
+   Header Section
+========================= */
 .header {
   background: black;
   columns: white;
@@ -37,7 +48,6 @@ html {
 }
 
 .logo {
-  position: relative;
   font-size: 40px;
   font-weight: bold;
   color: white;
@@ -52,6 +62,7 @@ html {
   transition: all 0.3s ease-in-out;
 }
 
+/* Navigation Links */
 .nav-links ul {
   list-style: none;
   display: flex;
@@ -67,26 +78,29 @@ html {
   font-size: 15px;
   font-weight: 400;
   padding: 6px 15px;
-  transition: all 0.3s ease-in-out;
-  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
 
+/* =========================
+   Home Section
+========================= */
 .home {
   height: 110vh;
-  z-index: 1;
   position: relative;
   display: flex;
   background: #1c1c1c;
+  background-image: url(https://cdnb.artstation.com/p/assets/images/images/072/752/005/large/alan-veron-dojo-sunset.jpg?1708106083);
   color: white;
   align-items: center;
   justify-content: space-around;
   padding: 0 10%;
   flex-wrap: wrap;
   gap: 150px;
-  background-image: url(https://cdnb.artstation.com/p/assets/images/images/072/752/005/large/alan-veron-dojo-sunset.jpg?1708106083);
+  z-index: 1;
 }
 
+/* Dark overlay for background image */
 .home::before {
   content: "";
   position: absolute;
@@ -96,7 +110,6 @@ html {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
- 
 }
 
 .home-content {
@@ -112,11 +125,14 @@ html {
 }
 
 .home-img img {
-  flex: 1;
-  display: flex;
   width: 400px;
+  display: flex;
+  flex: 1;
 }
 
+/* =========================
+   About & Sensei Sections
+========================= */
 .about,
 .sensei {
   background-color: #111;
@@ -144,7 +160,7 @@ html {
 .about-content p,
 .sensei-content p {
   font-size: 18px;
-  line-height: 2.0;
+  line-height: 2;
   margin: 20px 0;
   font-family: "Roboto", sans-serif;
   text-align: justify;
@@ -180,12 +196,13 @@ html {
   border: 3px solid #ffd600;
 }
 
-.about-img img {
-  flex: 1;
-  display: flex;
+.about-img img,
+.sensei-img img {
   width: 500px;
-  object-fit: contain;
   height: auto;
+  display: flex;
+  flex: 1;
+  object-fit: contain;
 }
 
 .sensei-content h3 {
@@ -193,17 +210,129 @@ html {
   font-weight: 500;
   text-transform: uppercase;
   font-family: "Deadstock", sans-serif;
+  color: #ffd600;
 }
 
-.sensei-img img {
-  flex: 1;
+/* =========================
+   Programs & Gallery Sections
+========================= */
+.programs {
+  position: relative;
+  background: black;
+  background-image: url(https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQXs-GkoZq683UYEtsRpigfTVndGN_BLchg8doUeV0yBzXcLKXGbgR3T-fElstSMaLtm3O_762JcYtvaNqDhCN-xcilYzEapB44UZB-BAL1XpMaITsOJ296pNv2gRthwFQ8tXHHzcJ7dcvWrdJcdBJBrF3kA.jpg?r=9ec);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 60px 10%;
+  z-index: 1;
+}
+
+.gallery {
+  background: #111;
+  text-align: center;
+  padding: 60px 10%;
+  color: white;
+}
+
+/* Overlay effect */
+.programs::before,
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+.programs h1,
+.gallery h1 {
+  font-size: 60px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Deadstock", sans-serif;
+}
+
+.programs h2 {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  font-family: "Stencilia", sans-serif;
+}
+
+.programs p {
+  font-size: 16px;
+  font-weight: 200;
+  margin-bottom: 50px;
+}
+
+/* Flex container for cards */
+.programs-container,
+.gallery-container {
   display: flex;
-  width: 500px;
-  object-fit: contain;
-  height: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 
+.programs-card,
+.gallery-card {
+  margin-top: 20px;
+  background: transparent;
+  border: 2px solid white;
+  padding: 15px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
 
+.programs-card:hover,
+.gallery-card:hover {
+  transform: scale(1.05);
+  background: #ffd600;
+  color: black;
+  border-color: #ffd600;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================
+   Footer Section
+========================= */
+.footer {
+  background-color: #111;
+  color: white;
+  font-size: 15px;
+  padding: 20px 20%;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-line {
+  width: 100%;
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-text {
+  margin: 30px 0;
+  font-size: 15px;
+}
+
+/* =========================
+   Media Queries
+========================= */
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -232,20 +361,23 @@ html {
     align-items: center;
   }
 
-  .about-content, .sensei-content {
+  .about-content,
+  .sensei-content {
     max-width: 100%;
-    padding: 5px;
+    padding-bottom: 30px;
     text-align: center;
   }
 
   .about-content h1,
-  .sensei-content h1, .sensei-content h3 {
+  .sensei-content h1,
+  .sensei-content h3 {
     font-size: 50px;
     text-align: center;
+    padding-top: 20px;
   }
 
   .btn {
-    padding: 10px;
+    padding: 20px;
     font-size: 16px;
   }
 }
@@ -261,6 +393,7 @@ html {
     align-items: center;
     gap: 10px;
   }
+
   .home {
     height: 130vh;
     flex-direction: row;
@@ -280,12 +413,11 @@ html {
   }
 
   .about-content h1,
-  .sensei-content h1, .sensei-content h3 {
+  .sensei-content h1,
+  .sensei-content h3 {
     font-size: 40px;
     text-align: center;
   }
-
-  
 
   .about-content p,
   .sensei-content p {
@@ -299,6 +431,7 @@ html {
   }
 }
 
+/* Landscape orientation support */
 @media screen and (orientation: landscape) {
   .home {
     flex-direction: row;
